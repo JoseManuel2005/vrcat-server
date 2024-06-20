@@ -1,0 +1,14 @@
+{
+    "name": "vr-cat-server",
+    "version": "1.0.0",
+    "description": "websockets server for VrCat game",
+    "main": "src/server.js",
+    "scripts": {
+      "dev": "node --watch src/server.js"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "dependencies": {
+      "socket.io": "^4.7.5"
+    }
+  }
