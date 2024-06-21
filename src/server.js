@@ -9,7 +9,7 @@ const { Server } = require("socket.io");
  */
 const clientURLLocalhost = "http://localhost:3000";
 // const clientUrlDeploy = "https://sphere-websockets-r3f-client.vercel.app";
-const clientUrlDeploy = "https://vr-cat.vercel.app/";
+const clientUrlDeploy = "https://vr-cat.vercel.app";
 
 
 const port = 8080;
