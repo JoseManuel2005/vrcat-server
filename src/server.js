@@ -1,4 +1,5 @@
 "use strict";
+
 /**
  * Module dependencies.
  */
@@ -8,9 +9,7 @@ const { Server } = require("socket.io");
  * Load environment variables from .env file.
  */
 const clientURLLocalhost = "http://localhost:3000";
-// const clientUrlDeploy = "https://sphere-websockets-r3f-client.vercel.app";
 const clientUrlDeploy = "https://vr-cat.vercel.app";
-
 
 const port = 8080;
 
@@ -46,10 +45,15 @@ io.on("connection", (socket) => {
 
   /**
    * Handle a player's movement.
-   * Broadcast the transforms to other player.
+   * Broadcast the transforms to other players.
+   * Log the player's ID and position.
    */
   socket.on("player-moving", (transforms) => {
-    socket.broadcast.emit("player-moving", transforms);
+    console.log(`Player with ID ${socket.id} is moving. Position:`, transforms.position);
+    socket.broadcast.emit("player-moving", {
+      id: socket.id,
+      ...transforms,
+    });
   });
 
   /**
